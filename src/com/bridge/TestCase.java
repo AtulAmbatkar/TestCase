@@ -6,32 +6,26 @@ public class TestCase {
 
 	public static  void main(String[] args) {
 		
-		Scanner scn = new Scanner(System.in);
+		Integer x =30, y = 10,  z=20;
 		
-		System.out.print("Enter the Intger size in between (1,10): ");
-		int number = scn.nextInt();
+		findMaxmim(x,y,z);
 		
-		int[] input = new int[number];
-		
-		System.err.print("Enter Integer to find Maximum number " + number + ": ");
-		
-		for(int i=0 ; i<input.length; i++) {
-			int a = scn.nextInt();
-			input[i] = a;
-		}
-		
-		maximum(input);
-		System.out.println("maximumNumber: " + input[0]);
 	}
-	private static void maximum(int[] input) {
+	
+	private static void toPrint(Integer max) {
+		System.out.println("maxMimunNumber: " + max);
+	}
+
+	private static void findMaxmim(Integer x, Integer y, Integer z) {
 		
-		int max = input[0];
-		for(int i=1; i<input.length; i++) {
-			if(max < input[i]) {
-				max = input[i];
-			}
+		Integer max = x;
+		if(y.compareTo(max)>0) {
+			max = y;
 		}
-		input[0] = max;
+		if(z.compareTo(max)>0) {
+			max=z;
+		}
+		toPrint(max);
 	}
 
 }
